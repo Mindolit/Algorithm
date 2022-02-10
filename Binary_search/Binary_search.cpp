@@ -20,10 +20,10 @@ int binary_search(int *arr,int target,int start,int end){
     }
     else{
       if(arr[mid]>target){ // target보다 큰경우 
-        return Mindolit_binary_search(arr,target,start,mid);
+        return binary_search(arr,target,start,mid);
       }
       else if(arr[mid<target]){
-        return Mindolit_binary_search(arr,target,mid,end);
+        return binary_search(arr,target,mid,end);
       }
     }
   }
