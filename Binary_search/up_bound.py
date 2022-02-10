@@ -1,5 +1,4 @@
-def up_bound(arr,target,start,end,cur=0):
-  #target과 같거나 큰 idx가 처음으로 나오는 위치를 return  
+def up_bound(arr,target,start,end,cur=0): 
   if start>=end:
     return cur
   else:
