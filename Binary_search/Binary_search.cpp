@@ -1,7 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-int Mindolit_binary_search(int *arr,int target,int start,int end){
+int binary_search(int *arr,int target,int start,int end){
   /*
   param 
   arr   : 오름차순으로 정렬된 배열
@@ -20,10 +20,10 @@ int Mindolit_binary_search(int *arr,int target,int start,int end){
     }
     else{
       if(arr[mid]>target){ // target보다 큰경우 
-        return Mindolit_binary_search(arr,target,start,mid);
+        return binary_search(arr,target,start,mid);
       }
       else if(arr[mid<target]){
-        return Mindolit_binary_search(arr,target,mid,end);
+        return binary_search(arr,target,mid,end);
       }
     }
   }
@@ -35,6 +35,6 @@ int main(){
   int target;
   cout<<"INPUT TARGET:";
   cin>>target;
-  cout<<"TARGET INDEX:"<<Mindolit_binary_search(sorted_array,target,0,11);
+  cout<<"TARGET INDEX:"<<binary_search(sorted_array,target,0,11);
   system("pause");
 }
