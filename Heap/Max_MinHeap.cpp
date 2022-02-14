@@ -52,16 +52,32 @@ public:
         child=child*2;
       }
       else{ break; }
-
-
     }
-
-
   }
 
   void min_heap_pop(){
-
+    cout<<"---------MIN_HEAP_POP----------"<<'\n';
+    min_heap[1]=min_heap[min_heap_idx-1];
+    int tmp=min_heap[1]; min_heap[min_heap_idx-1]=0;
+    int parent=1,child=2;
+    while(child<=min_heap_idx){
+      if(min_heap[child]<=tmp || min_heap[child+1]<=tmp){
+        if(min_heap[child]<min_heap[child+1]){
+          swap(min_heap[parent],min_heap[child]);
+        }
+        else{
+          child=child+1;
+          swap(min_heap[parent],min_heap[child]);
+        }
+        parent=child;
+        child=child*2;
+      }
+      else{
+        break;
+      }
+    }
   }
+
   void print_top(){
     cout<<"MAX_HEAP_TOP:"<<heap[1]<<'\n';
     cout<<"MIN_HEAP_TOP:"<<min_heap[1]<<'\n';
@@ -77,6 +93,8 @@ int main(){
   a.push(13);
   a.print_top();
   a.max_heap_pop();
+  a.print_top();
+  a.min_heap_pop();
   a.print_top();
   system("pause");
 }
