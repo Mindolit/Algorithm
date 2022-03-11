@@ -20,7 +20,9 @@ bool is_only(int id, int size, int cntlevel) {
     int loop_count = v[cntlevel].size();
     for (int i = 0; i < loop_count; i++) {
         if (v[cntlevel][i].id == id) {  //값이 중복된다면
+            Heap_MAXNOW[cntlevel] -= v[cntlevel][i].size;
             v[cntlevel].erase(v[cntlevel].begin() + i); //중복된 값을 제거하고
+            
             return false;
         }
     }
@@ -66,7 +68,7 @@ bool check_overflow(int id, int size, int cntlevel) {
 
 int main() {
     cin >> n >> m;
-    fill_n(Heap_MAX,SIZE,100000);
+    fill_n(Heap_MAX,SIZE,10000000);
     //heap 크기 입력
     for (int i = 0; i < n-1; i++)
     {
